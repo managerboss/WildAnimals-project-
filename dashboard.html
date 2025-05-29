@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wild Animals of Africa</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #333;
+      background-color: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')
+          no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .animal-section {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .animal-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .animal-header {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #27ae60, #2ecc71);
+      color: white;
+      padding: 20px;
+    }
+
+    .animal-header h2 {
+      font-size: 2rem;
+      margin-left: 20px;
+    }
+
+    .animal-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .animal-image {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .animal-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .animal-image img:hover {
+      transform: scale(1.02);
+    }
+
+    .animal-details {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
+
+    .animal-details h3 {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #27ae60;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+
+    .animal-details ul {
+      list-style-type: none;
+      margin-bottom: 25px;
+    }
+
+    .animal-details li {
+      padding: 8px 0;
+      border-bottom: 1px dotted #e0e6ed;
+      display: flex;
+    }
+
+    .animal-details li::before {
+      content: "•";
+      color: #27ae60;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 20px auto 30px auto;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+      display: block;
+      width: max-content;
+    }
+
+    .back-btn:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        padding: 70px 15px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .animal-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .animal-header h2 {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+
+      .animal-content {
+        flex-direction: column;
+      }
+
+      .animal-image,
+      .animal-details {
+        min-width: 100%;
+      }
+    }
+  </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body>
+  <header>
+    <h1>African Wild Animals</h1>
+    <p>Learn about Africa's major wild animals, their features, and fascinating habits</p>
+  </header>
+
+  <div class="container">
+    <!-- Lion -->
+    <section class="animal-section">
+      <div class="animal-header">
+        <i class="fas fa-paw" style="font-size: 2.5rem"></i>
+        <h2>Lion</h2>
+      </div>
+      <div class="animal-content">
+        <div class="animal-image">
+          <img
+            src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Lion"
+          />
+        </div>
+        <div class="animal-details">
+          <h3>Lion Characteristics</h3>
+          <ul>
+            <li>The lion is a large animal of the cat family (Felidae)</li>
+            <li>They have colors ranging from brown to yellow and males can have a mane</li>
+            <li>Males weigh between 120-250 kg and females 120-182 kg</li>
+            <li>They have large sharp teeth for hunting</li>
+            <li>They can run at speeds up to 80 km/h for short distances</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leopard -->
+    <section class="animal-section">
+      <div class="animal-header">
+        <i class="fas fa-paw" style="font-size: 2.5rem"></i>
+        <h2>Leopard</h2>
+      </div>
+      <div class="animal-content">
+        <div class="animal-image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpAICXG7mZe8mwc4nwN03VW8P5SqCFSJkEzg&s"
+            alt="Leopard"
+          />
+        </div>
+        <div class="animal-details">
+          <h3>Leopard Characteristics</h3>
+          <ul>
+            <li>Leopard has skin covered with small spots</li>
+            <li>They have colors ranging from brown or yellow with black spots</li>
+            <li>They usually weigh between 30-90 kg</li>
+            <li>They have a long body and strong legs</li>
+            <li>They can climb trees very well</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Antelope -->
+    <section class="animal-section">
+      <div class="animal-header">
+        <i class="fas fa-paw" style="font-size: 2.5rem"></i>
+        <h2>Antelope</h2>
+      </div>
+      <div class="animal-content">
+        <div class="animal-image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZtlatuA-lSv22OnO5qhnvvYUw7DVl5vJrXg&s"
+            alt="Antelope"
+          />
+        </div>
+        <div class="animal-details">
+          <h3>Antelope Characteristics</h3>
+          <ul>
+            <li>Antelope is a herbivore that feeds on grasses</li>
+            <li>They are fast runners and can reach speeds up to 80 km/h</li>
+            <li>They have light brown fur with white markings</li>
+            <li>Antelopes have long slender legs and necks</li>
+            <li>They live in herds for protection</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Elephant -->
+    <section class="animal-section">
+      <div class="animal-header">
+        <i class="fas fa-paw" style="font-size: 2.5rem"></i>
+        <h2>Elephant</h2>
+      </div>
+      <div class="animal-content">
+        <div class="animal-image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsABzoTew8Vyffj7RNcsxEf6nJ16PvMJbgWg&s"
+            alt="Elephant"
+          />
+        </div>
+        <div class="animal-details">
+          <h3>Elephant Characteristics</h3>
+          <ul>
+            <li>Elephants are the largest land animals on Earth</li>
+            <li>They have large ears and long trunks used for grabbing food and water</li>
+            <li>They can weigh up to 6000 kg</li>
+            <li>Elephants live in herds and have strong social bonds</li>
+            <li>They are herbivores and eat grass, leaves, and bark</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giraffe -->
+    <section class="animal-section">
+      <div class="animal-header">
+        <i class="fas fa-paw" style="font-size: 2.5rem"></i>
+        <h2>Giraffe</h2>
+      </div>
+      <div class="animal-content">
+        <div class="animal-image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAC_b5ep5_MkULcJFnCRxbO6gNJpuexOldnw&s"
+            alt="Giraffe"
+          />
+        </div>
+        <div class="animal-details">
+          <h3>Giraffe Characteristics</h3>
+          <ul>
+            <li>Giraffes are the tallest land animals</li>
+            <li>They have long necks that help them reach leaves on tall trees</li>
+            <li>They weigh between 800-1200 kg</li>
+            <li>They have spotted patterns on their fur which vary between individuals</li>
+            <li>Giraffes can run at speeds up to 60 km/h</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+     <button class="back-btn" onclick="window.location.href='index.html'"><i class="fas fa-arrow-left"></i> Return Back</button>
+  </div>
+
+  <footer>
+    &copy; 2025 African Wildlife. All rights reserved.
+  </footer>
+</body>
+</html>
